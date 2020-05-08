@@ -25,7 +25,7 @@ h6 {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 3rem;
   line-height: 5.5rem;
 }
 
@@ -75,8 +75,8 @@ p.lead {
   display: inline-block;
   height: 2rem;
   width: 2.5rem;
-  background-color: #000000;
-  color: #ffffff !important;
+  background-color: #ffffff;
+  color: #000000 !important;
   border-radius: 4px;
   text-align: center;
   font-size: 1.2rem;
@@ -94,11 +94,27 @@ p.lead {
 }
 
 .dev-icons {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
-.dev-icons .list-inline-item i:hover {
-  color: #ffc107;
+.badge-primary {
+  background-color: #ffc107;
+  color: #000000;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.btn-outline-dark {
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.btn-outline-dark:hover {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -123,6 +139,10 @@ p.lead {
 }
 
 @media (min-width: 992px) {
+  h1 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
   #sideNav {
     text-align: center;
     position: fixed;
