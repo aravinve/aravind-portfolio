@@ -35,6 +35,24 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  color: #ffc107;
+}
+img {
+  height: 10rem !important;
+}
+
+.my-thumb {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.card {
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 99;
 }
 
 .bg-primary {
@@ -58,6 +76,10 @@ a:active {
 p.lead {
   font-size: 1.15rem;
   font-weight: 400;
+}
+
+li {
+  list-style-type: square;
 }
 
 .subheading {
