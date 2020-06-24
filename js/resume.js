@@ -35,8 +35,11 @@
 
   $('#modal-close-btn').click(function () {
     $('#projectModalLabel').text('');
-    $('img[class="d-block w-100"]').each(function (index, element) {
-      $(element).attr('src', '#!');
+    $('.carousel-item').each(function (index, element) {
+      $(element.children[0]).attr('src', '#!');
+      if ($(element.children[0]).hasClass('my-carousel')) {
+        $(element.children[0]).removeClass('my-carousel');
+      }
     });
     $('.modal-body .content').text('');
     $('#github_uri').html('Link');
@@ -88,6 +91,7 @@
     );
     $('img[class="d-block w-100"]').each(function (index, element) {
       $(element).attr('src', `./img/gif/uob/${index + 1}.png`);
+      $(element).addClass('my-carousel');
     });
     $('.modal-body .content').text(
       'A Redefined Design Approach for United Overseas Bank (UOB). Structured Digital Innovation of services such as Member Onboarding, CRM, Merchant Services in the spheres of service process and design innovation. Used Figma And Materialize Design Standards'

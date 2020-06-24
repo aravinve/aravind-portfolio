@@ -47,6 +47,12 @@ h3 {
   height: 2rem !important;
 }
 
+.my-carousel {
+  height: 24rem !important;
+  width: 16rem !important;
+  margin-left: 6rem !important;
+}
+
 .card {
   transition: 0.5s ease-in-out;
 }
