@@ -104,7 +104,7 @@
   });
   $('#hangar').click(function () {
     $('#projectModalLabel').html(
-      ' <img class="rounded my-thumb" src="./img/project/5_F.png" alt="Card image cap">Hangar'
+      ' <img class="rounded my-thumb" src="./img/project/5_F.png" alt="Card image cap"> Hangar'
     );
     $('img[class="d-block w-100"]').each(function (index, element) {
       $(element).attr('src', `./img/gif/hangar/${index + 1}.png`);
