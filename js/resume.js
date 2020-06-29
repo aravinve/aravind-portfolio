@@ -1,7 +1,6 @@
 (function ($) {
   'use strict'; // Start of use strict
 
-  // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (
       location.pathname.replace(/^\//, '') ==
@@ -23,15 +22,60 @@
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function () {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#sideNav',
   });
+
+  var form = document.getElementById("contact-form");
+  var alert = document.getElementById('alert-div');
+  function success(){
+    form.reset();
+    alert.classList.add("alert-success")
+    alert.classList.remove("d-none")
+    alert.innerText = 'Email Sent Successfully!'
+    setTimeout(() => {
+      alert.classList.remove("alert-success")
+      alert.classList.add("d-none")
+      alert.innerText = ''
+    }, 3000)
+  }
+
+  function error(){
+    alert.classList.add("alert-danger")
+    alert.classList.remove("d-none")
+    alert.innerText = 'Failed! Try Again Later'
+    setTimeout(() => {
+      alert.classList.remove("alert-danger")
+      alert.classList.add("d-none")
+      alert.innerText = ''
+    }, 3000)
+  }
+
+
+  form.addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+
+  function ajax(method, url, data, success, error){
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }
 
   $('#modal-close-btn').click(function () {
     $('#projectModalLabel').text('');
