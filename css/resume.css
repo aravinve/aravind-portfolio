@@ -271,6 +271,12 @@ section.resume-section .resume-item .resume-date {
   .btn-home-center{
     text-align: left !important;
   }
+  .nv-font{
+    font-size: 1.2rem !important;
+  }
+  .my-ac-top{
+    height: 8rem !important;
+  }
 }
 
 .social-icons-home{
@@ -301,4 +307,18 @@ section.resume-section .resume-item .resume-date {
   color: #fff;
   background-color: crimson;
   border-color: #f1f1f1;
+}
+
+.nv-font{
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.my-ac-top{
+  height: 10rem !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  color: #000000;
+  background-color: #ffc107;
 }

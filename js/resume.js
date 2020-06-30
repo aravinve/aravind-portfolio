@@ -30,6 +30,20 @@
     target: '#sideNav',
   });
 
+  $('#academic-projects-link').click(function () {
+    $('#academic-projects').removeClass("d-none");
+    $('#academic-projects-link').addClass("active");
+    $('#personal-projects').addClass("d-none");
+    $('#personal-projects-link').removeClass("active");
+  })
+
+  $('#personal-projects-link').click(function () {
+    $('#personal-projects').removeClass("d-none");
+    $('#personal-projects-link').addClass("active");
+    $('#academic-projects').addClass("d-none");
+    $('#academic-projects-link').removeClass("active");
+  })
+
   var form = document.getElementById("contact-form");
   var alert = document.getElementById('alert-div');
   function success(){
@@ -88,6 +102,34 @@
     $('.modal-body .content').text('');
     $('#github_uri').html('Link');
     $('#github_uri').attr('href', '#!');
+  });
+
+  $('#sparkfab').click(function () {
+    $('#projectModalLabel').html(
+      'Sparkfab'
+    );
+    $('img[class="d-block w-100"]').each(function (index, element) {
+      $(element).attr('src', `./img/gif/sparkfab/${index + 1}.png`);
+    });
+    $('.modal-body .content').text(
+      'Developed a multipurpose platform for fashion image classification and search. Techstack involved Pyspark, SparkDL, Django and Elasticsearch'
+    );
+    $('#github_uri').html('<i class="fab fa-github"> </i> Github');
+    $('#github_uri').attr('href', 'https://github.com/aravinve/CS4225-CS5425-BigDataProject');
+  });
+
+  $('#blockbustr').click(function () {
+    $('#projectModalLabel').html(
+      'Blockbustr'
+    );
+    $('img[class="d-block w-100"]').each(function (index, element) {
+      $(element).attr('src', `./img/gif/blockbustr/${index + 1}.png`);
+    });
+    $('.modal-body .content').text(
+      'MERN Stack web app demonstrating Cross-Site Scripting and HTTP Parameter Pollution problems and the relevant defenses in form of database scanning, data filtration, and deployment of attack detection middleware.'
+    );
+    $('#github_uri').html('<i class="fab fa-github"> </i> Github');
+    $('#github_uri').attr('href', 'https://github.com/aravinve/blockbustr');
   });
 
   $('#rv-labs').click(function () {
